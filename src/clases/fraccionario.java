@@ -14,9 +14,12 @@ public class fraccionario {
 private int numerador;
 private int denominador;
 
-public fraccionario(int numerador, int denominador){
+public fraccionario(int numerador, int denominador) throws DenominadorCeroException{
 this.numerador=numerador;
 this.denominador=denominador;
+if(denominador==0){
+throw new DenominadorCeroException();
+}
 }
 
 public int getNumerador() {

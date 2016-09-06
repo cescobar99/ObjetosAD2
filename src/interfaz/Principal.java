@@ -6,7 +6,9 @@
 
 package interfaz;
 
+import clases.DenominadorCeroException;
 import clases.fraccionario;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -115,7 +117,7 @@ public class Principal extends javax.swing.JFrame {
     num2= Integer.parseInt(txtNumerador2.getText());
     den1= Integer.parseInt(txtDenominador1.getText());
     den2= Integer.parseInt(txtDenominador2.getText());
-    
+    try{
     f1= new fraccionario(num1, den1);
     f2 = new fraccionario(num2, den2);
     
@@ -131,6 +133,9 @@ public class Principal extends javax.swing.JFrame {
     }
     txtNumerador3.setText(""+f3.getNumerador());
     txtDenominador3.setText(""+f3.getDenominador());
+    }catch(DenominadorCeroException e){
+    JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    }
     }//GEN-LAST:event_cmdCalcularActionPerformed
 
     private void cmdLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLimpiarActionPerformed
