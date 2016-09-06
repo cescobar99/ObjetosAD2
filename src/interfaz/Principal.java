@@ -6,6 +6,8 @@
 
 package interfaz;
 
+import clases.fraccionario;
+
 /**
  *
  * @author yescobar7
@@ -54,21 +56,35 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
         jPanel1.add(txtNumerador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 80, -1));
         jPanel1.add(txtDenominador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 80, -1));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 80, 10));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 100, 30));
 
         cmbOperacion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Suma", "Resta", "Multiplicacion", "Division", " " }));
-        jPanel1.add(cmbOperacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, -1, -1));
+        jPanel1.add(cmbOperacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, -1, -1));
         jPanel1.add(txtNumerador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 80, -1));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, 80, 10));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 100, 20));
         jPanel1.add(txtDenominador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 80, -1));
+
+        txtNumerador3.setEditable(false);
         jPanel1.add(txtNumerador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, 80, -1));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, 80, 10));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, 100, 20));
+
+        txtDenominador3.setEditable(false);
         jPanel1.add(txtDenominador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 80, -1));
 
         cmdCalcular.setText("CALCULAR");
+        cmdCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCalcularActionPerformed(evt);
+            }
+        });
         jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, -1));
 
         cmdLimpiar.setText("LIMPIAR");
+        cmdLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdLimpiarActionPerformed(evt);
+            }
+        });
         jPanel1.add(cmdLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -90,6 +106,43 @@ public class Principal extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(507, 280));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
+    int op, num1, num2, den1, den2;
+    fraccionario f1, f2, f3=null;
+    op = cmbOperacion.getSelectedIndex();
+    num1= Integer.parseInt(txtNumerador1.getText());
+    num2= Integer.parseInt(txtNumerador2.getText());
+    den1= Integer.parseInt(txtDenominador1.getText());
+    den2= Integer.parseInt(txtDenominador2.getText());
+    
+    f1= new fraccionario(num1, den1);
+    f2 = new fraccionario(num2, den2);
+    
+    switch (op) {
+    case 0:
+    f3= f1.Sumar(f2);
+    break;
+    case 1:
+    f3= f1.Restar(f2);
+    break;
+    case 2:
+    f3= f1.Multiplicacion(f2);
+    }
+    txtNumerador3.setText(""+f3.getNumerador());
+    txtDenominador3.setText(""+f3.getDenominador());
+    }//GEN-LAST:event_cmdCalcularActionPerformed
+
+    private void cmdLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLimpiarActionPerformed
+    txtNumerador1.setText("");
+    txtNumerador2.setText("");
+    txtNumerador3.setText("");
+    txtDenominador1.setText("");
+    txtDenominador2.setText("");
+    txtDenominador3.setText("");
+    txtNumerador1.requestFocusInWindow();
+    cmbOperacion.setSelectedIndex(0);
+    }//GEN-LAST:event_cmdLimpiarActionPerformed
 
     /**
      * @param args the command line arguments

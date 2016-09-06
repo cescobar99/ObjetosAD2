@@ -42,6 +42,21 @@ num = this.numerador * f2.denominador + this.denominador * f2.numerador;
 den= this.denominador * f2.denominador;
 f= new fraccionario(num,den);
 return f;
-
+}
+public fraccionario Restar(fraccionario f2){
+fraccionario f;
+int num, den;
+num= this.numerador * f2.denominador - this.denominador * f2.numerador;
+den= this.denominador * f2.denominador;
+f= new fraccionario(num, den);
+return f;
+}
+public fraccionario Multiplicacion(fraccionario f2){
+fraccionario f;
+int num, den;
+num= this.numerador * f2.numerador;
+den= this.denominador * f2.denominador;
+f= new fraccionario(num, den);
+return f;
 }
 }
