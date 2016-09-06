@@ -41,7 +41,7 @@ public class Principal extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         txtDenominador3 = new javax.swing.JTextField();
         cmdCalcular = new javax.swing.JButton();
-        cmdBorrar = new javax.swing.JButton();
+        cmdLimpiar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -68,8 +68,8 @@ public class Principal extends javax.swing.JFrame {
         cmdCalcular.setText("CALCULAR");
         jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, -1));
 
-        cmdBorrar.setText("BORRAR");
-        jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, -1, -1));
+        cmdLimpiar.setText("LIMPIAR");
+        jPanel1.add(cmdLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 51, 255));
@@ -128,8 +128,8 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox cmbOperacion;
-    private javax.swing.JButton cmdBorrar;
     private javax.swing.JButton cmdCalcular;
+    private javax.swing.JButton cmdLimpiar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

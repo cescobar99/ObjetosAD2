@@ -148,9 +148,9 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JButton" name="cmdBorrar">
+        <Component class="javax.swing.JButton" name="cmdLimpiar">
           <Properties>
-            <Property name="text" type="java.lang.String" value="BORRAR"/>
+            <Property name="text" type="java.lang.String" value="LIMPIAR"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
